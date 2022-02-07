@@ -1,0 +1,319 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- greet:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- info:
+    use_entities: true
+- inform:
+    use_entities: true
+- choose:
+    use_entities: true
+entities:
+- info
+- profile
+- people
+- price
+- matches
+- food
+- place
+- gender
+- age
+slots:
+  profile:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+  gender:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - male
+    - female
+  age:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - young
+    - middle-aged
+    - eldery
+  food:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  people:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  place:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  price:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  info:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  matches:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  counter:
+    type: rasa.shared.core.slots.FloatSlot
+    initial_value: 0.0
+    auto_fill: true
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+responses:
+  utter_greet_1:
+  - text: Hey dude, what is up
+  utter_greet_2:
+  - text: Hey girl, how is it going
+  utter_greet_3:
+  - text: Hello sir, what can I help you with
+  utter_greet_4:
+  - text: Hello maam, how can I help you
+  utter_greet_5:
+  - text: Greetings sir, what may I assist you with today
+  utter_greet_6:
+  - text: Good day madam, how could I assist you today
+  utter_processing_1:
+  - text: I'm on your request
+  utter_processing_2:
+  - text: Be right back with your reservation
+  utter_processing_3:
+  - text: I'm processing the request
+  utter_processing_4:
+  - text: Give me a second for processing the reservation
+  utter_processing_5:
+  - text: Excellent sir, I will start the request now
+  utter_processing_6:
+  - text: Thank you Madam, I shall start the reservation now
+  utter_ask_food_1:
+  - text: What food are you looking for?
+  utter_ask_food_2:
+  - text: What food are you looking for?
+  utter_ask_food_3:
+  - text: What type of cuisine would you like to eat?
+  utter_ask_food_4:
+  - text: What type of cuisine would you like to eat?
+  utter_ask_food_5:
+  - text: May I know your preference on the type of cuisine?
+  utter_ask_food_6:
+  - text: Could you tell me your preference on the type of cuisine?
+  utter_ask_location_1:
+  - text: Where should it be?
+  utter_ask_location_2:
+  - text: Where should it be?
+  utter_ask_location_3:
+  - text: Where should it be located?
+  utter_ask_location_4:
+  - text: Where should it be located?
+  utter_ask_location_5:
+  - text: May I know where the restaurant should be located?
+  utter_ask_location_6:
+  - text: Could you tell me where the restaurant should be located?
+  utter_ask_price_1:
+  - buttons:
+    - payload: cheap
+      title: cheap
+    - payload: moderate
+      title: moderate
+    - payload: expensive
+      title: expensive
+    text: What should the price be?
+  utter_ask_price_2:
+  - buttons:
+    - payload: cheap
+      title: cheap
+    - payload: moderate
+      title: moderate
+    - payload: expensive
+      title: expensive
+    text: What should the price be?
+  utter_ask_price_3:
+  - buttons:
+    - payload: cheap
+      title: cheap
+    - payload: moderate
+      title: moderate
+    - payload: expensive
+      title: expensive
+    text: Which price range are you looking for?
+  utter_ask_price_4:
+  - buttons:
+    - payload: cheap
+      title: cheap
+    - payload: moderate
+      title: moderate
+    - payload: expensive
+      title: expensive
+    text: Which price range are you looking for?
+  utter_ask_price_5:
+  - buttons:
+    - payload: cheap
+      title: cheap
+    - payload: moderate
+      title: moderate
+    - payload: expensive
+      title: expensive
+    text: May I know your prefered price range?
+  utter_ask_price_6:
+  - buttons:
+    - payload: cheap
+      title: cheap
+    - payload: moderate
+      title: moderate
+    - payload: expensive
+      title: expensive
+    text: Would you mind telling me your price range?
+  utter_ask_people_1:
+  - text: How many are you?
+  utter_ask_people_2:
+  - text: How many are you?
+  utter_ask_people_3:
+  - text: How many people would be in your party?
+  utter_ask_people_4:
+  - text: How many people would be in your party?
+  utter_ask_people_5:
+  - text: May i know how many guests will be at your table?
+  utter_ask_people_6:
+  - text: Would you mind telling me how many guests shall be at your table?
+  utter_ask_update_1:
+  - text: Cool, anything else you want to update?
+  utter_ask_update_2:
+  - text: Awesome, is there any other update?
+  utter_ask_update_3:
+  - text: Great, is there anything else to modify?
+  utter_ask_update_4:
+  - text: Great, is there anything else to modify?
+  utter_ask_update_5:
+  - text: I will modify your request. Is there anything else to change?
+  utter_ask_update_6:
+  - text: I shall modify your reservation. Is there any other change?
+  utter_search_options_1:
+  - text: Ok, looking for options
+  utter_search_options_2:
+  - text: Sure, finding some options
+  utter_search_options_3:
+  - text: Ok Sir, I'm looking for options for you
+  utter_search_options_4:
+  - text: Sure maam, I'm finding some options for you
+  utter_search_options_5:
+  - text: Excellent Sir, please give me a moment to provide you with options
+  utter_search_options_6:
+  - text: Thank you madam, I shall provide you with options shortly
+  utter_provide_option_1:
+  - text: 'Is this one cool:'
+  utter_provide_option_2:
+  - text: 'How about this one:'
+  utter_provide_option_3:
+  - text: 'Is this a good option:'
+  utter_provide_option_4:
+  - text: 'What do you think of this option:'
+  utter_provide_option_5:
+  - text: 'May I suggest this option:'
+  utter_provide_option_6:
+  - text: 'Would you consider this option:'
+  utter_other_option_1:
+  - text: Ok, looking for something else
+  utter_other_option_2:
+  - text: Sure, finding something else
+  utter_other_option_3:
+  - text: Ok, I'll look for a better option
+  utter_other_option_4:
+  - text: Sure, I'll find a better option
+  utter_other_option_5:
+  - text: Yes Sir, I will look for another suitable option
+  utter_other_option_6:
+  - text: Yes maam, I shall find another suitable option
+  utter_provide_info_1:
+  - text: 'Here you go:'
+  utter_provide_info_2:
+  - text: 'Here you go:'
+  utter_provide_info_3:
+  - text: 'Here it is:'
+  utter_provide_info_4:
+  - text: 'Here it is:'
+  utter_provide_info_5:
+  - text: 'Here is the information you asked for:'
+  utter_provide_info_6:
+  - text: 'Here is the information you asked for:'
+  utter_sth_else_1:
+  - text: Want anything else?
+  utter_sth_else_2:
+  - text: Need anything else?
+  utter_sth_else_3:
+  - text: Is there anything I can help you with?
+  utter_sth_else_4:
+  - text: Can I assist you with something else?
+  utter_sth_else_5:
+  - text: May I help you in any other way, sir?
+  utter_sth_else_6:
+  - text: Could I assist you in some other manner, madam?
+  utter_reservation_1:
+  - text: Cool, it's done
+  utter_reservation_2:
+  - text: Awesome, you're done
+  utter_reservation_3:
+  - text: Great, I'll finalize the request
+  utter_reservation_4:
+  - text: Great, let me do the reservation
+  utter_reservation_5:
+  - text: Excellent, I will finalize your request
+  utter_reservation_6:
+  - text: Thank you, I shall finish your reservation
+  utter_welcome_1:
+  - text: No problem
+  utter_welcome_2:
+  - text: Happy to help
+  utter_welcome_3:
+  - text: You're welcome
+  utter_welcome_4:
+  - text: You're welcome
+  utter_welcome_5:
+  - text: It was a pleasure to be of help to you, sir
+  utter_welcome_6:
+  - text: I am grateful to assist you madam
+
+actions:
+- action_search_restaurants
+- action_suggest_restaurant
+- action_provide_informations
+- action_greet
+- action_greet1
+- action_greet2
+forms: {}
+e2e_actions: []
