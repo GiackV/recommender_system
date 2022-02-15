@@ -46,7 +46,7 @@ slots:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: true
+    influence_conversation: false
     values:
     - male
     - female
@@ -54,7 +54,7 @@ slots:
     type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
-    influence_conversation: true
+    influence_conversation: false
     values:
     - young
     - middle-aged
@@ -184,11 +184,11 @@ responses:
   utter_ask_price_5:
   - buttons:
     - payload: cheap
-      title: cheap
+      title: Cheap
     - payload: moderate
-      title: moderate
+      title: Moderate
     - payload: expensive
-      title: expensive
+      title: Expensive
     text: May I know your prefered price range?
   utter_ask_price_6:
   - buttons:
@@ -307,13 +307,36 @@ responses:
   - text: It was a pleasure to be of help to you, sir
   utter_welcome_6:
   - text: I am grateful to assist you madam
+  utter_ask_gender:
+  - buttons:
+    - payload: '/choose{{"gender": "male"}}'
+      title: Male
+    - payload: '/choose{{"gender": "female"}}'
+      title: Female
+    text: What is your gender?
+  utter_ask_age:
+  - buttons:
+    - payload: '/choose{{"age": "young"}}'
+      title: Young
+    - payload: '/choose{{"age": "middle-aged"}}'
+      title: Middle-aged
+    - payload: '/choose{{"age": "eldery"}}'
+      title: Eldery
+    text: What is your age?
 
 actions:
 - action_search_restaurants
 - action_suggest_restaurant
 - action_provide_informations
 - action_greet
-- action_greet1
-- action_greet2
-forms: {}
+- action_profile
+forms:
+  init_form:
+    required_slots:
+      age:
+      - entity: age
+        type: from_entity
+      gender:
+      - entity: gender
+        type: from_entity
 e2e_actions: []

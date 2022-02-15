@@ -1,20 +1,13 @@
 # This files contains your custom actions which can be used to run
 # custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-import datetime as dt
 import requests
 from geopy.geocoders import Nominatim
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, Restarted
+from rasa_sdk.events import SlotSet, Restarted, FollowupAction
 import json
 import math 
 
@@ -270,45 +263,52 @@ class ActionGreet(Action):
         return "action_greet"
 
     def run(self, dispatcher: CollectingDispatcher, tracker, domain):
-        # SETTING GENDER AND AGE OF THE USER
+        '''
+        if PEPPER_MODE:
+            return [FollowupAction(name = 'action_profile')]
+            #return [UserUttered(text="", parse_data = {'intent': {'name': 'choose', 'confidence': 1.0}, 'entities': []})]
+        '''
+
+        buttons = []
+        buttons.append({"title": 'Male Young' , "payload": '/choose{"gender": "male", "age": "young"}'})
+        buttons.append({"title": 'Female Young' , "payload": '/choose{"gender": "female", "age": "young"}'})
+        buttons.append({"title": 'Male Middle-aged' , "payload": '/choose{"gender": "male", "age": "middle-aged"}'})
+        buttons.append({"title": 'Female Middle-aged' , "payload": '/choose{"gender": "female", "age": "middle-aged"}'})
+        buttons.append({"title": 'Male Eldery' , "payload": '/choose{"gender": "male", "age": "eldery"}'})
+        buttons.append({"title": 'Female Eldery' , "payload": '/choose{"gender": "female", "age": "eldery"}'})
+        dispatcher.utter_message(text= "Choose your gender:" , buttons=buttons)
+
+        return []
+        #return [FollowupAction(name = 'action_listen'), FollowupAction(name = 'action_greet_1')]
+
+
+class ActionProfile(Action):
+    def name(self):
+        return "action_profile"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker, domain):
+        GREET_UTT = {
+            "Hey dude what is up":                              ["male", "young"],
+            "Hey girl how is it going":                         ["female", "young"],
+            "Hello sir what can i help you with":               ["male", "middle-aged"],
+            "Hello maam how can i help you":                    ["female", "middle-aged"],
+            "Greetings sir what may i assist you with today":   ["male", "eldery"],
+            "Good day madam how could i assist you today":      ["female", "eldery"]
+        }
+
         gender = tracker.get_slot("gender")
         age = tracker.get_slot("age")
-        
+
         if gender is None or age is None:
-            return [SlotSet("profile", 3)]
+            profile=3
+        else:
+            profile = 1 if gender == "male" and age == "young" else 2 if gender == "female" and age == "young" else 3 if gender == "male" and age == "middle-aged" else 4 if gender == "female" and age == "middle-aged" else 5 if gender == "male" and age == "eldery" else 6
 
-        profile = 1 if gender == "male" and age == "young" else 2 if gender == "female" and age == "young" else 3 if gender == "male" and age == "middle-aged" else 4 if gender == "female" and age == "middle-aged" else 5 if gender == "male" and age == "eldery" else 6
+        for k, v in GREET_UTT.items():
+            if [gender, age]==v:
+                msg = k
+        dispatcher.utter_message(text=msg)
+
+        print("gender, age = ", gender, age)    
+        print("PROFILO " + str(profile))
         return [SlotSet("profile", profile)]
-
-
-'''
-Queste due azioni servono solo per telegram
-'''
-class ActionGreet1(Action):
-    def name(self):
-        return "action_greet1"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker, domain):
-        buttons = []
-        buttons.append({"title": 'Male' , "payload": '/choose{"gender": "male"}'})
-        buttons.append({"title": 'Female' , "payload": '/choose{"gender": "female"}'})
-        dispatcher.utter_message(text= "What's your gender" , buttons=buttons)
-
-        return []
-
-
-class ActionGreet2(Action):
-    def name(self):
-        return "action_greet2"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker, domain):
-        buttons = []
-        buttons.append({"title": 'Young' , "payload": '/choose{"age": "young"}'})
-        buttons.append({"title": 'Middle-aged' , "payload": '/choose{"age": "middle-aged"}'})
-        buttons.append({"title": 'Eldery' , "payload": '/choose{"age": "eldery"}'})
-        dispatcher.utter_message(text= "What's your age" , buttons=buttons)
-
-        return []
-
-
-  
