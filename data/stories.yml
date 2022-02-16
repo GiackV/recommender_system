@@ -68,3 +68,58 @@ stories:
   - action: utter_sth_else_4
   - intent: deny
   - action: utter_welcome_4
+- story: Story from Conversation ID 7dc27e3a4c1e434490a368f66190e539
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - slot_was_set:
+    - requested_slot: age
+  - slot_was_set:
+    - age: middle-aged
+  - slot_was_set:
+    - age: middle-aged
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - gender: female
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 4
+  - intent: inform
+    entities:
+    - place: Milano
+  - slot_was_set:
+    - place: Milano
+  - action: utter_processing_4
+  - action: utter_ask_food_4
+  - intent: inform
+    entities:
+    - food: chinese
+  - slot_was_set:
+    - food: chinese
+  - action: utter_ask_people_4
+  - intent: inform
+    entities:
+    - people: '3'
+  - slot_was_set:
+    - people: '3'
+  - action: utter_ask_price_4
+  - intent: inform
+    entities:
+    - price: cheap
+  - slot_was_set:
+    - price: cheap
+  - action: utter_search_options_4
+  - action: utter_provide_option_4
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: info
+  - action: action_provide_informations
+  - intent: info
+  - action: action_provide_informations
