@@ -96,11 +96,16 @@ slots:
     influence_conversation: false
     max_value: 1.0
     min_value: 0.0
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet_1:
-  - text: Hey dude, what is up
+  - text: Hey dude, what you need
   utter_greet_2:
-  - text: Hey girl, how is it going
+  - text: Hey girl, what are you looking for
   utter_greet_3:
   - text: Hello sir, what can I help you with
   utter_greet_4:
@@ -323,7 +328,6 @@ responses:
     - payload: '/choose{{"age": "eldery"}}'
       title: Eldery
     text: What is your age?
-
 actions:
 - action_search_restaurants
 - action_suggest_restaurant

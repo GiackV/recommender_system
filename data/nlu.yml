@@ -1,5 +1,58 @@
 version: "2.0"
 nlu:
+- intent: greet
+  examples: |
+    - hello pepper
+    - hi pepper
+    - hei
+    - Hi
+    - Hello
+    - Ciao
+- intent: inform
+  examples: |
+    - I amore looking for a restaurant
+    - [Chinese](food)
+    - I would like to eat out this evening
+    - I would like to eat
+    - Where can I eat
+    - I like [pasta](food)
+    - Suggest me a restaurant
+    - [Indian](food) food
+    - [Milan](place)
+    - [expensive](price)
+    - We are [six]{"entity": "people", "value": "6"}
+    - i'm looking for a restaurant in [Parigi](place)
+    - Voglio prenotare un tavolo per [due](people) persone
+    - [Panino](food)
+    - [Due](people)
+    - [2](people)
+    - In a [fast-food](food)
+    - Hello, I'm looking for a [sushi](food) restaurant
+    - Siamo [due](people)
+    - I'd like to eat an [hot dog](food)
+    - Hello, I'm interested In an [Asian](food) restaurant
+    - [Naples](place)
+    - [Sushi](food)
+    - [7](people)
+    - I want to eat out
+    - Voglio prenotare
+- intent: info
+  examples: |
+    - Which is the [name](info) of the restaurant?
+    - Which is the [address](info)?
+    - Give me its [phone number](info)
+    - [place](info)?
+    - [Address](info)?
+- intent: thankyou
+  examples: |
+    - Thank you
+- intent: deny
+  examples: |
+    - [cheap](price)
+- intent: affirm
+  examples: |
+    - Yes
+    - Everything ok
 - synonym: '6'
   examples: |
     - six
