@@ -10,6 +10,8 @@ nlu:
     - Ciao
     - hi
     - hello
+    - hei pepper
+    - hola
 - intent: inform
   examples: |
     - I amore looking for a restaurant
@@ -38,6 +40,13 @@ nlu:
     - [7](people)
     - I want to eat out
     - Voglio prenotare
+    - i want to eat something
+    - we are [two]{"entity": "people", "value": "2"}
+    - i want to eat [pizza](food)
+    - i'm staying in [Napoli](place) for a while
+    - i am with other [3](people) people
+    - i would prefer some [chinese](food) food or something
+    - i want a cool restaurant in [Milano](place)
 - intent: info
   examples: |
     - Which is the [name](info) of the restaurant?
@@ -45,6 +54,7 @@ nlu:
     - Give me its [phone number](info)
     - [place](info)?
     - [Address](info)?
+    - [where](info) is it?
 - intent: thankyou
   examples: |
     - Thank you
