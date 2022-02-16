@@ -8,6 +8,8 @@ nlu:
     - Hi
     - Hello
     - Ciao
+    - hi
+    - hello
 - intent: inform
   examples: |
     - I amore looking for a restaurant
