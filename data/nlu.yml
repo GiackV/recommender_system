@@ -12,6 +12,15 @@ nlu:
     - hello
     - hei pepper
     - hola
+    - hellooooooooo
+    - Buongiorno
+    - Helloooo
+    - Find me a [pub](food)
+    - Good morning
+    - Bonjour
+    - Helllo
+    - Hey
+    - hello!
 - intent: inform
   examples: |
     - I amore looking for a restaurant
@@ -47,6 +56,83 @@ nlu:
     - i am with other [3](people) people
     - i would prefer some [chinese](food) food or something
     - i want a cool restaurant in [Milano](place)
+    - [50](people)
+    - In [Salerno](place)
+    - [American](food) cuisine
+    - I'm looking for a [pub](food)
+    - I'm looking for a restaurant
+    - We are [7](people) guys
+    - It would be in [Avellino](place)
+    - I'm looking for a [pizza](food) place nearby
+    - [moderate](price)
+    - [8](people)
+    - [Turin](place)
+    - Can you suggest me a place where to eat [pasta](food)?
+    - I want to eat [pasta](food)
+    - [3](people)
+    - [Pontecagnano Faiano](place)
+    - where can I go to eat a [pizza](food)?
+    - Where can I go to eat a [pizza](food)?
+    - Where can I eat a [pizza](food)?
+    - Where can I eat?
+    - Can you suggest me a place where to eat?
+    - Hi, I'm looking for a restaurant
+    - I want to eat something
+    - I need a restaurant
+    - Find me a restaurant
+    - I want a restaurant in [Pontecagnano Faiano](place)
+    - [6](people)
+    - [Pizza](food)
+    - I'm looking for a place where to eat wih my friends
+    - [Salerno](place)
+    - Can you find me a place where to take out my girl to eat something?
+    - in [Milan](place)
+    - I'm looking for a [bar](food)
+    - [1](people)
+    - [Rome](place)
+    - I want to eat a [hamburger](food)
+    - [expensive](price) [sushi](food) [salerno](place)
+    - I'm hungry and I'd like to eat something
+    - [salerno](place)
+    - [sushi](food)
+    - No, i want to eat in a [pub](food)
+    - No, I'm looking for a pub, not a [sushi](food) restaurant!
+    - [4](people)
+    - Near [Naples](place)
+    - I'm looking for a [Peruvian](food) restaurant
+    - find me a restaurant
+    - can you find me a [pizzeria](food)?
+    - I want to find a [pizzeria](food)
+    - I want to find a [sushi](food) restaurant
+    - I want a Restaurant
+    - I want a resturant
+    - I'm looking for a restrant
+    - [Expensive](price) price
+    - [Moderate](price) price
+    - [Milano](place)
+    - [French](food)
+    - Restaurant
+    - could it be in [Napoli](place)
+    - could it be with [moderate](price) price?
+    - we are [16](people)
+    - in [Salerno](place)
+    - i want to try some [japanese](food) food
+    - i'm looking for a restaurant please
+    - we are [six]{"entity": "people", "value": "6"}
+    - i would like in [Solofra](place) please
+    - [italian](food)
+    - i want a restaurant
+    - Find a restaurant
+    - [Bergamo](place)
+    - [Italian](food)
+    - [5](people)
+    - [Caserta](place)
+    - [Russian](food)
+    - [13](people)
+    - Find pi [Greco](place) restaurant
+    - i think there will be at least [five]{"entity": "people", "value": "5"} people
+    - Actually i would like some [mexican](food) food
+    - is there a good restaurant in [Parigi](place)
 - intent: info
   examples: |
     - Which is the [name](info) of the restaurant?
@@ -55,25 +141,59 @@ nlu:
     - [place](info)?
     - [Address](info)?
     - [where](info) is it?
+    - tell me the [location](info) please
+    - [Where](info) is it located?
+    - may i know its [location](info)?
+    - [Opening hour](info)
+    - [Address](info)
+    - [Where](info) is it
+    - could you tell me [where](info) is it?
+    - could you tell me the [place](info)?
+    - tell me the [phone number](info)
+    - tell me the [info](info)
+    - [where](info) is it [located](info)?
 - intent: thankyou
   examples: |
     - Thank you
+    - Thank you!
+    - Perfect, thank you!
+    - great thank you
+    - thank you
 - intent: deny
   examples: |
     - [cheap](price)
+    - No, it's far
+    - No
+    - No, I want something near me
+    - Nope, it's still too far
+    - No, it's too far
+    - I don't like it
+    - no thanks
+    - no, give me another one
+    - no
+    - no give me another restaurant please
+    - i dont like it
+    - nope
 - intent: affirm
   examples: |
     - Yes
     - Everything ok
+    - Good
+    - Fine
+    - I like it
+    - it's good
+    - it's great
+    - ok
+    - yeah
 - synonym: '6'
   examples: |
     - six
-- synonym: '1'
-  examples: |
-    - one
 - synonym: '2'
   examples: |
     - two
+- synonym: '1'
+  examples: |
+    - one
 - synonym: '3'
   examples: |
     - three

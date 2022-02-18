@@ -5463,3 +5463,623 @@ stories:
   - action: action_suggest_restaurant
   - slot_was_set:
     - counter: '0'
+- story: Story from Conversation ID 9a6b91343b1e45298f18863d298b2151
+  steps:
+  - intent: greet
+  - action: action_greet1
+  - intent: choose
+    entities:
+    - gender: male
+  - slot_was_set:
+    - gender: male
+  - action: action_greet2
+  - intent: choose
+    entities:
+    - age: young
+  - slot_was_set:
+    - age: young
+  - action: action_greet
+  - slot_was_set:
+    - profile: 1
+  - action: utter_greet_1
+  - intent: inform
+    entities:
+    - place: amore
+  - slot_was_set:
+    - place: amore
+  - action: utter_processing_1
+  - action: utter_ask_food_1
+  - intent: inform
+    entities:
+    - food: Chinese
+  - slot_was_set:
+    - food: Chinese
+  - action: utter_ask_people_1
+  - intent: affirm
+    entities:
+    - people: '7'
+  - slot_was_set:
+    - people: '7'
+  - action: utter_reservation_1
+  - intent: info
+  - action: utter_search_options_1
+  - action: utter_provide_option_1
+  - action: action_search_restaurants
+  - slot_was_set:
+    - matches:
+      - __typename: AppPresentation_SingleCard
+        trackingTitle: RestaurantListCard_restaurant_b7aac749-0ba2-4040-b9f2-573985bf6885_EAT_0
+        trackingKey: '{"br":4.5,"rc":24,"ik":"32c6c56c-83ab-423b-bb17-8ba6a065d5e9_1","ctt":"LOCATION","pt":"restaurant","lid":14932730,"pir":2,"mid":334172947,"sn":"Attractions"}'
+        stableDiffingType: RestaurantListCard_restaurant_b7aac749-0ba2-4040-b9f2-573985bf6885_EAT_0
+        singleCardContent:
+          __typename: AppPresentation_HorizontalCommerceCard
+          badge: null
+          trackingKey: '{"br":4.5,"rc":24,"ik":"32c6c56c-83ab-423b-bb17-8ba6a065d5e9_1","ctt":"LOCATION","pt":"restaurant","lid":14932730,"pir":2,"mid":334172947,"sn":"Attractions"}'
+          trackingTitle: RestaurantListCard_restaurant_b7aac749-0ba2-4040-b9f2-573985bf6885
+          stableDiffingType: RestaurantListCard_restaurant_b7aac749-0ba2-4040-b9f2-573985bf6885
+          cardTitle:
+            __typename: AppPresentation_LocalizedString
+            string: 1. Zen Restaurant
+            debugValueKey: null
+          primaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: $ • Chinese • Indian • Pizza
+          secondaryInfo: null
+          commerceTimes: []
+          commerceButtons:
+            __typename: AppPresentation_Buttons
+            singleButton: null
+            firstCommerceButton: null
+            secondCommerceButton: null
+          isSaved: false
+          saveId:
+            __typename: Trips_ReferenceV2
+            id: '14932730'
+            type: location
+          cardPhoto:
+            __typename: AppPresentation_PhotoItem
+            sizes:
+              __typename: AppPresentation_PhotoItemSizeDynamic
+              maxHeight: 154
+              maxWidth: 327
+              urlTemplate: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/eb/13/13/zen-restaurant.jpg?w={width}&h={height}&s=1
+          distance: null
+          bubbleRating:
+            __typename: AppPresentation_BubbleRating
+            rating: 4.5
+            numberReviews:
+              __typename: AppPresentation_LocalizedString
+              string: '24'
+              debugValueKey: null
+          labels: []
+          descriptiveText: null
+          cardLink:
+            __typename: AppPresentation_InternalLink
+            route:
+              __typename: Routing_Route
+              fragment: null
+              page: AppDetail
+              url: /AppDetail?contentType=restaurant&contentId=b7aac749-0ba2-4040-b9f2-573985bf6885
+              nonCanonicalUrl: /AppDetail?contentType=restaurant&contentId=b7aac749-0ba2-4040-b9f2-573985bf6885
+              typedParams:
+                __typename: Routing_AppDetailParameters
+                contentId: b7aac749-0ba2-4040-b9f2-573985bf6885
+                contentType: restaurant
+                spAttributionToken: null
+            webviewRoute: null
+            text: null
+            accessibilityString:
+              __typename: AppPresentation_LocalizedString
+              string: View details for Zen Restaurant
+              debugValueKey: null
+            trackingContext: server_card
+        clusterId: EAT_0
+      - __typename: AppPresentation_SingleCard
+        trackingTitle: RestaurantListCard_restaurant_77a98e80-0e31-47f7-a762-341c83917d9c_EAT_0
+        trackingKey: '{"br":4.5,"rc":26,"ik":"32c6c56c-83ab-423b-bb17-8ba6a065d5e9_2","ctt":"LOCATION","pt":"restaurant","lid":14185114,"pir":3,"mid":325130752,"sn":"Attractions"}'
+        stableDiffingType: RestaurantListCard_restaurant_77a98e80-0e31-47f7-a762-341c83917d9c_EAT_0
+        singleCardContent:
+          __typename: AppPresentation_HorizontalCommerceCard
+          badge: null
+          trackingKey: '{"br":4.5,"rc":26,"ik":"32c6c56c-83ab-423b-bb17-8ba6a065d5e9_2","ctt":"LOCATION","pt":"restaurant","lid":14185114,"pir":3,"mid":325130752,"sn":"Attractions"}'
+          trackingTitle: RestaurantListCard_restaurant_77a98e80-0e31-47f7-a762-341c83917d9c
+          stableDiffingType: RestaurantListCard_restaurant_77a98e80-0e31-47f7-a762-341c83917d9c
+          cardTitle:
+            __typename: AppPresentation_LocalizedString
+            string: 2. Ibachi
+            debugValueKey: null
+          primaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: $$ - $$$ • Chinese • Asian
+          secondaryInfo: null
+          commerceTimes: []
+          commerceButtons:
+            __typename: AppPresentation_Buttons
+            singleButton:
+              __typename: AppPresentation_BorderlessButton
+              commerceTrackingUrl: null
+              link:
+                __typename: AppPresentation_ExternalLink
+                externalUrl: https://www.chiiba.com/wp-content/uploads/2020/08/Ibachi-Menu.pdf
+                text:
+                  __typename: AppPresentation_LocalizedString
+                  string: Menu
+                  debugValueKey: null
+                accessibilityString:
+                  __typename: AppPresentation_LocalizedString
+                  string: View menu for Ibachi
+                  debugValueKey: null
+                trackingContext: server_menu
+              variant: PRIMARY
+            firstCommerceButton: null
+            secondCommerceButton: null
+          isSaved: false
+          saveId:
+            __typename: Trips_ReferenceV2
+            id: '14185114'
+            type: location
+          cardPhoto:
+            __typename: AppPresentation_PhotoItem
+            sizes:
+              __typename: AppPresentation_PhotoItemSizeDynamic
+              maxHeight: 3024
+              maxWidth: 4032
+              urlTemplate: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/61/1a/00/the-ibadan-chinese-restaurant.jpg?w={width}&h={height}&s=1
+          distance: null
+          bubbleRating:
+            __typename: AppPresentation_BubbleRating
+            rating: 4.5
+            numberReviews:
+              __typename: AppPresentation_LocalizedString
+              string: '26'
+              debugValueKey: null
+          labels: []
+          descriptiveText: null
+          cardLink:
+            __typename: AppPresentation_InternalLink
+            route:
+              __typename: Routing_Route
+              fragment: null
+              page: AppDetail
+              url: /AppDetail?contentType=restaurant&contentId=77a98e80-0e31-47f7-a762-341c83917d9c
+              nonCanonicalUrl: /AppDetail?contentType=restaurant&contentId=77a98e80-0e31-47f7-a762-341c83917d9c
+              typedParams:
+                __typename: Routing_AppDetailParameters
+                contentId: 77a98e80-0e31-47f7-a762-341c83917d9c
+                contentType: restaurant
+                spAttributionToken: null
+            webviewRoute: null
+            text: null
+            accessibilityString:
+              __typename: AppPresentation_LocalizedString
+              string: View details for Ibachi
+              debugValueKey: null
+            trackingContext: server_card
+        clusterId: EAT_0
+  - slot_was_set:
+    - counter: 0
+  - action: action_suggest_restaurant
+  - slot_was_set:
+    - counter: '0'
+  - intent: info
+    entities:
+    - info: address
+  - slot_was_set:
+    - info: address
+  - action: utter_provide_info_1
+  - action: action_provide_informations
+- story: Story from Conversation ID dc4b0ebced8a4bdbbdcb348dfb8167f0
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - slot_was_set:
+    - requested_slot: age
+  - slot_was_set:
+    - age: middle-aged
+  - slot_was_set:
+    - age: middle-aged
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - gender: male
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 3
+  - intent: inform
+  - action: utter_ask_food_3
+  - intent: inform
+    entities:
+    - food: Sushi
+  - slot_was_set:
+    - food: Sushi
+  - action: utter_ask_location_3
+  - intent: inform
+    entities:
+    - place: Naples
+  - slot_was_set:
+    - place: Naples
+  - action: utter_ask_people_3
+  - intent: inform
+    entities:
+    - people: '7'
+  - slot_was_set:
+    - people: '7'
+  - action: utter_ask_price_3
+  - intent: deny
+    entities:
+    - price: cheap
+  - slot_was_set:
+    - price: cheap
+  - action: utter_search_options_3
+  - action: utter_provide_option_3
+  - action: action_search_restaurants
+  - slot_was_set:
+    - matches:
+      - __typename: AppPresentation_SingleCard
+        trackingTitle: RestaurantListCard_restaurant_9091113c-7f31-4bbc-b3ae-4a6e93447a99_EAT_0
+        trackingKey: '{"br":3.5,"rc":552,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_1","ctt":"LOCATION","pt":"restaurant","lid":7117079,"pir":734,"mid":470233303,"sn":"Attractions"}'
+        stableDiffingType: RestaurantListCard_restaurant_9091113c-7f31-4bbc-b3ae-4a6e93447a99_EAT_0
+        singleCardContent:
+          __typename: AppPresentation_HorizontalCommerceCard
+          badge: null
+          trackingKey: '{"br":3.5,"rc":552,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_1","ctt":"LOCATION","pt":"restaurant","lid":7117079,"pir":734,"mid":470233303,"sn":"Attractions"}'
+          trackingTitle: RestaurantListCard_restaurant_9091113c-7f31-4bbc-b3ae-4a6e93447a99
+          stableDiffingType: RestaurantListCard_restaurant_9091113c-7f31-4bbc-b3ae-4a6e93447a99
+          cardTitle:
+            __typename: AppPresentation_LocalizedString
+            string: 1. Ristorante Bambu
+            debugValueKey: null
+          primaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: $ • Chinese • Japanese • Sushi
+          secondaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: Open now • Porto
+          commerceTimes: []
+          commerceButtons:
+            __typename: AppPresentation_Buttons
+            singleButton: null
+            firstCommerceButton:
+              __typename: AppPresentation_TertiaryCommerceButton
+              commerceTrackingUrl: null
+              link:
+                __typename: AppPresentation_ExternalLink
+                externalUrl: https://www.tripadvisor.com/Commerce?p=Restaurants_Deliveroo&src=139908653&geo=7117079&from=Restaurants&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=28960&bucket=870004&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=224836366&managed=false&capped=false&gosox=TYKcM1j0ZnyOsvBkdTBKE0TFa0sB4LA-m6Ry6_4-2hr_90IGeGSxSysMYoTergMINGi9I6nuBPmXmunT2F7Y2YX-3W4IvrNKNTATTolCllE&cs=13c36542e49ca303b49c5dcaaf3080c12
+                text:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online
+                  debugValueKey: null
+                accessibilityString:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online with Deliveroo
+                  debugValueKey: null
+                trackingContext: server_order_online_1
+            secondCommerceButton: null
+          isSaved: false
+          saveId:
+            __typename: Trips_ReferenceV2
+            id: '7117079'
+            type: location
+          cardPhoto:
+            __typename: AppPresentation_PhotoItem
+            sizes:
+              __typename: AppPresentation_PhotoItemSizeDynamic
+              maxHeight: 2736
+              maxWidth: 3648
+              urlTemplate: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/07/30/d7/ristorante-bambu.jpg?w={width}&h={height}&s=1
+          distance: null
+          bubbleRating:
+            __typename: AppPresentation_BubbleRating
+            rating: 3.5
+            numberReviews:
+              __typename: AppPresentation_LocalizedString
+              string: '552'
+              debugValueKey: null
+          labels: []
+          descriptiveText: null
+          cardLink:
+            __typename: AppPresentation_InternalLink
+            route:
+              __typename: Routing_Route
+              fragment: null
+              page: AppDetail
+              url: /AppDetail?contentType=restaurant&contentId=9091113c-7f31-4bbc-b3ae-4a6e93447a99
+              nonCanonicalUrl: /AppDetail?contentType=restaurant&contentId=9091113c-7f31-4bbc-b3ae-4a6e93447a99
+              typedParams:
+                __typename: Routing_AppDetailParameters
+                contentId: 9091113c-7f31-4bbc-b3ae-4a6e93447a99
+                contentType: restaurant
+                spAttributionToken: null
+            webviewRoute: null
+            text: null
+            accessibilityString:
+              __typename: AppPresentation_LocalizedString
+              string: View details for Ristorante Bambu
+              debugValueKey: null
+            trackingContext: server_card
+        clusterId: EAT_0
+      - __typename: AppPresentation_SingleCard
+        trackingTitle: RestaurantListCard_restaurant_dc06b56f-4357-4090-baea-6c39d1402969_EAT_0
+        trackingKey: '{"br":3.5,"rc":593,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_2","ctt":"LOCATION","pt":"restaurant","lid":6429597,"pir":809,"mid":141038140,"sn":"Attractions"}'
+        stableDiffingType: RestaurantListCard_restaurant_dc06b56f-4357-4090-baea-6c39d1402969_EAT_0
+        singleCardContent:
+          __typename: AppPresentation_HorizontalCommerceCard
+          badge: null
+          trackingKey: '{"br":3.5,"rc":593,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_2","ctt":"LOCATION","pt":"restaurant","lid":6429597,"pir":809,"mid":141038140,"sn":"Attractions"}'
+          trackingTitle: RestaurantListCard_restaurant_dc06b56f-4357-4090-baea-6c39d1402969
+          stableDiffingType: RestaurantListCard_restaurant_dc06b56f-4357-4090-baea-6c39d1402969
+          cardTitle:
+            __typename: AppPresentation_LocalizedString
+            string: 2. Fashion Wok
+            debugValueKey: null
+          primaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: $ • Chinese • Japanese • Seafood
+          secondaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: Open now • Porto
+          commerceTimes: []
+          commerceButtons:
+            __typename: AppPresentation_Buttons
+            singleButton: null
+            firstCommerceButton:
+              __typename: AppPresentation_TertiaryCommerceButton
+              commerceTrackingUrl: null
+              link:
+                __typename: AppPresentation_ExternalLink
+                externalUrl: https://www.tripadvisor.com/Commerce?p=Restaurants_Deliveroo&src=147683901&geo=6429597&from=Restaurants&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=28960&bucket=870004&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=224836366&managed=false&capped=false&gosox=TYKcM1j0ZnyOsvBkdTBKE0TFa0sB4LA-m6Ry6_4-2hr_90IGeGSxSysMYoTergMINGi9I6nuBPmXmunT2F7Y2bsDGOhpn9jmDu1G7gCYawg&cs=14e1d4ad1df9c4d6010a72aa18d96e0d8
+                text:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online
+                  debugValueKey: null
+                accessibilityString:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online with Deliveroo
+                  debugValueKey: null
+                trackingContext: server_order_online_1
+            secondCommerceButton: null
+          isSaved: false
+          saveId:
+            __typename: Trips_ReferenceV2
+            id: '6429597'
+            type: location
+          cardPhoto:
+            __typename: AppPresentation_PhotoItem
+            sizes:
+              __typename: AppPresentation_PhotoItemSizeDynamic
+              maxHeight: 1536
+              maxWidth: 2048
+              urlTemplate: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/68/12/3c/take-away-sushi.jpg?w={width}&h={height}&s=1
+          distance: null
+          bubbleRating:
+            __typename: AppPresentation_BubbleRating
+            rating: 3.5
+            numberReviews:
+              __typename: AppPresentation_LocalizedString
+              string: '593'
+              debugValueKey: null
+          labels: []
+          descriptiveText: null
+          cardLink:
+            __typename: AppPresentation_InternalLink
+            route:
+              __typename: Routing_Route
+              fragment: null
+              page: AppDetail
+              url: /AppDetail?contentType=restaurant&contentId=dc06b56f-4357-4090-baea-6c39d1402969
+              nonCanonicalUrl: /AppDetail?contentType=restaurant&contentId=dc06b56f-4357-4090-baea-6c39d1402969
+              typedParams:
+                __typename: Routing_AppDetailParameters
+                contentId: dc06b56f-4357-4090-baea-6c39d1402969
+                contentType: restaurant
+                spAttributionToken: null
+            webviewRoute: null
+            text: null
+            accessibilityString:
+              __typename: AppPresentation_LocalizedString
+              string: View details for Fashion Wok
+              debugValueKey: null
+            trackingContext: server_card
+        clusterId: EAT_0
+      - __typename: AppPresentation_SingleCard
+        trackingTitle: RestaurantListCard_restaurant_7ae53972-dbbe-4e18-bbb1-f3ed738a00e0_EAT_0
+        trackingKey: '{"br":3.5,"rc":34,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_3","ctt":"LOCATION","pt":"restaurant","lid":18895458,"pir":1553,"mid":471430913,"sn":"Attractions"}'
+        stableDiffingType: RestaurantListCard_restaurant_7ae53972-dbbe-4e18-bbb1-f3ed738a00e0_EAT_0
+        singleCardContent:
+          __typename: AppPresentation_HorizontalCommerceCard
+          badge: null
+          trackingKey: '{"br":3.5,"rc":34,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_3","ctt":"LOCATION","pt":"restaurant","lid":18895458,"pir":1553,"mid":471430913,"sn":"Attractions"}'
+          trackingTitle: RestaurantListCard_restaurant_7ae53972-dbbe-4e18-bbb1-f3ed738a00e0
+          stableDiffingType: RestaurantListCard_restaurant_7ae53972-dbbe-4e18-bbb1-f3ed738a00e0
+          cardTitle:
+            __typename: AppPresentation_LocalizedString
+            string: 3. Sushi Lab
+            debugValueKey: null
+          primaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: $ • Japanese • Sushi • Asian
+          secondaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: Open now • Pendino
+          commerceTimes: []
+          commerceButtons:
+            __typename: AppPresentation_Buttons
+            singleButton: null
+            firstCommerceButton:
+              __typename: AppPresentation_TertiaryCommerceButton
+              commerceTrackingUrl: null
+              link:
+                __typename: AppPresentation_ExternalLink
+                externalUrl: https://www.tripadvisor.com/Commerce?p=Delivery_Takeaway&src=207687956&geo=18895458&from=Restaurants&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=30023&bucket=942491&nrank=1&crank=2&clt=R&ttype=Restaurant&tm=224836366&managed=false&capped=false&gosox=hoj-XIew3AFl06ehuBdwigY1zzB7zZ6R8kbTVop6J1t6yJit11sLuj5wYD6cYnXYNGi9I6nuBPmXmunT2F7Y2b-_7wJaj0K5JctEecdAY9k&cs=17d5baf617af73145d37811b25b7d1a3c
+                text:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online
+                  debugValueKey: null
+                accessibilityString:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online with JustEat
+                  debugValueKey: null
+                trackingContext: server_order_online_1
+            secondCommerceButton: null
+          isSaved: false
+          saveId:
+            __typename: Trips_ReferenceV2
+            id: '18895458'
+            type: location
+          cardPhoto:
+            __typename: AppPresentation_PhotoItem
+            sizes:
+              __typename: AppPresentation_PhotoItemSizeDynamic
+              maxHeight: 1365
+              maxWidth: 2048
+              urlTemplate: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/19/77/01/uramaki-love.jpg?w={width}&h={height}&s=1
+          distance: null
+          bubbleRating:
+            __typename: AppPresentation_BubbleRating
+            rating: 3.5
+            numberReviews:
+              __typename: AppPresentation_LocalizedString
+              string: '34'
+              debugValueKey: null
+          labels: []
+          descriptiveText: null
+          cardLink:
+            __typename: AppPresentation_InternalLink
+            route:
+              __typename: Routing_Route
+              fragment: null
+              page: AppDetail
+              url: /AppDetail?contentType=restaurant&contentId=7ae53972-dbbe-4e18-bbb1-f3ed738a00e0
+              nonCanonicalUrl: /AppDetail?contentType=restaurant&contentId=7ae53972-dbbe-4e18-bbb1-f3ed738a00e0
+              typedParams:
+                __typename: Routing_AppDetailParameters
+                contentId: 7ae53972-dbbe-4e18-bbb1-f3ed738a00e0
+                contentType: restaurant
+                spAttributionToken: null
+            webviewRoute: null
+            text: null
+            accessibilityString:
+              __typename: AppPresentation_LocalizedString
+              string: View details for Sushi Lab
+              debugValueKey: null
+            trackingContext: server_card
+        clusterId: EAT_0
+      - __typename: AppPresentation_SingleCard
+        trackingTitle: RestaurantListCard_restaurant_604f15ec-a179-4cdb-b1f0-9405423cbfb2_EAT_0
+        trackingKey: '{"br":3.0,"rc":116,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_4","ctt":"LOCATION","pt":"restaurant","lid":12920063,"pir":1951,"mid":321653947,"sn":"Attractions"}'
+        stableDiffingType: RestaurantListCard_restaurant_604f15ec-a179-4cdb-b1f0-9405423cbfb2_EAT_0
+        singleCardContent:
+          __typename: AppPresentation_HorizontalCommerceCard
+          badge: null
+          trackingKey: '{"br":3.0,"rc":116,"ik":"c54523f1-410a-4a45-8af5-24ca2389645b_4","ctt":"LOCATION","pt":"restaurant","lid":12920063,"pir":1951,"mid":321653947,"sn":"Attractions"}'
+          trackingTitle: RestaurantListCard_restaurant_604f15ec-a179-4cdb-b1f0-9405423cbfb2
+          stableDiffingType: RestaurantListCard_restaurant_604f15ec-a179-4cdb-b1f0-9405423cbfb2
+          cardTitle:
+            __typename: AppPresentation_LocalizedString
+            string: 4. Ristorante Nagoya
+            debugValueKey: null
+          primaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: $ • Chinese • Japanese • Sushi
+          secondaryInfo:
+            __typename: AppPresentation_JoinedLocalizableObjects
+            text: Open now • Vomero
+          commerceTimes: []
+          commerceButtons:
+            __typename: AppPresentation_Buttons
+            singleButton:
+              __typename: AppPresentation_BorderlessButton
+              commerceTrackingUrl: null
+              link:
+                __typename: AppPresentation_ExternalLink
+                externalUrl: http://www.nagoya-napoli.it#menu
+                text:
+                  __typename: AppPresentation_LocalizedString
+                  string: Menu
+                  debugValueKey: null
+                accessibilityString:
+                  __typename: AppPresentation_LocalizedString
+                  string: View menu for Ristorante Nagoya
+                  debugValueKey: null
+                trackingContext: server_menu
+              variant: PRIMARY
+            firstCommerceButton:
+              __typename: AppPresentation_TertiaryCommerceButton
+              commerceTrackingUrl: null
+              link:
+                __typename: AppPresentation_ExternalLink
+                externalUrl: https://www.tripadvisor.com/Commerce?p=Delivery_Takeaway&src=207683092&geo=12920063&from=Restaurants&area=reservation_button&slot=1&matchID=1&oos=0&cnt=1&silo=30023&bucket=942491&nrank=1&crank=1&clt=R&ttype=Restaurant&tm=224836366&managed=false&capped=false&gosox=hoj-XIew3AFl06ehuBdwigY1zzB7zZ6R8kbTVop6J1t6yJit11sLuj5wYD6cYnXYNGi9I6nuBPmXmunT2F7Y2QGjjfqDfstcikRCIzlbzRg&cs=13de88b37fe8414a33200aaa438731b74
+                text:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online
+                  debugValueKey: null
+                accessibilityString:
+                  __typename: AppPresentation_LocalizedString
+                  string: Order online with JustEat
+                  debugValueKey: null
+                trackingContext: server_order_online_1
+            secondCommerceButton: null
+          isSaved: false
+          saveId:
+            __typename: Trips_ReferenceV2
+            id: '12920063'
+            type: location
+          cardPhoto:
+            __typename: AppPresentation_PhotoItem
+            sizes:
+              __typename: AppPresentation_PhotoItemSizeDynamic
+              maxHeight: 597
+              maxWidth: 1062
+              urlTemplate: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/2c/0c/bb/20180601-230530-largejpg.jpg?w={width}&h={height}&s=1
+          distance: null
+          bubbleRating:
+            __typename: AppPresentation_BubbleRating
+            rating: 3.0
+            numberReviews:
+              __typename: AppPresentation_LocalizedString
+              string: '116'
+              debugValueKey: null
+          labels: []
+          descriptiveText: null
+          cardLink:
+            __typename: AppPresentation_InternalLink
+            route:
+              __typename: Routing_Route
+              fragment: null
+              page: AppDetail
+              url: /AppDetail?contentType=restaurant&contentId=604f15ec-a179-4cdb-b1f0-9405423cbfb2
+              nonCanonicalUrl: /AppDetail?contentType=restaurant&contentId=604f15ec-a179-4cdb-b1f0-9405423cbfb2
+              typedParams:
+                __typename: Routing_AppDetailParameters
+                contentId: 604f15ec-a179-4cdb-b1f0-9405423cbfb2
+                contentType: restaurant
+                spAttributionToken: null
+            webviewRoute: null
+            text: null
+            accessibilityString:
+              __typename: AppPresentation_LocalizedString
+              string: View details for Ristorante Nagoya
+              debugValueKey: null
+            trackingContext: server_card
+        clusterId: EAT_0
+  - slot_was_set:
+    - counter: 0
+  - action: action_suggest_restaurant
+  - slot_was_set:
+    - counter: '0'
+  - intent: affirm
+  - slot_was_set:
+    - food: Sushi
+  - slot_was_set:
+    - place: Naples
+  - slot_was_set:
+    - people: '7'
+  - slot_was_set:
+    - price: cheap
+  - action: utter_reservation_3
