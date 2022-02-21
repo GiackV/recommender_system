@@ -185,12 +185,24 @@ nlu:
     - it's great
     - ok
     - yeah
+- intent: mood_greet
+  examples: |
+    - It's going well
+    - Nothing new, how about you?
+    - Ok you?
+    - Very good thanks
+- intent: what_can_you_do
+  examples: |
+    - what can you do
 - synonym: '6'
   examples: |
     - six
 - synonym: '2'
   examples: |
     - two
+- synonym: '5'
+  examples: |
+    - five
 - synonym: '1'
   examples: |
     - one
@@ -200,9 +212,6 @@ nlu:
 - synonym: '4'
   examples: |
     - four
-- synonym: '5'
-  examples: |
-    - five
 - synonym: '7'
   examples: |
     - seven
