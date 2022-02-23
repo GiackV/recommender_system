@@ -31,64 +31,14 @@ class RestaurantAPI:
 
         sort            = "POPULARITY"
         partySize       = self._convertWord2Num(people)
-        meal_type       = 10599
+        meal_type       = "10598, 10599" # Launch and Dinner
         price           = "10953, 10954, 1955" if pricerange is None else "10953" if pricerange == "cheap" else "10955" if pricerange == "moderate" else 10954 # if "expensive"
-        cuisine         = self._find_cuisine(food) # assumed the user specifies only one cuisine
-        #diet            = 
+        cuisine, dish   = self._find_cuisine(food) # the user can specify both a type of cuisine and a particular food
         min_rating      = 30
         distance        = 2 # Km
         bbox = self._getBoundsFromLatLng(lat, lng, distance)
 
-        payload = """{\r
-            \"geoId\": 1,\r
-            \"partySize\": """+ str(partySize) +""",\r
-            \"reservationTime\": \"2021-07-07T20:00\",\r
-            \"sort\": \""""+ str(sort) +"""\",\r
-            \"sortOrder\": \"desc\",\r
-            \"filters\": [\r
-                {\r
-                    \"id\": \"establishment\",\r
-                    \"value\": [\r
-                        \"10591\"\r
-                    ]\r
-                },\r
-                {\r
-                    \"id\": \"meal\",\r
-                    \"value\": [\r
-                        \""""+ str(meal_type) +"""\"\r
-                    ]\r
-                },\r
-                {\r
-                    \"id\": \"price\",\r
-                    \"value\": [\r
-                        \""""+ str(price) +"""\"\r
-                    ]\r
-                },\r
-                {\r
-                    \"id\": \"minRating\",\r
-                    \"value\": [\r
-                        \""""+ str(min_rating) +"""\"\r
-                    ]\r
-                },\r
-                {\r
-                    \"id\": \"cuisine\",\r
-                    \"value\": [\r
-                        \""""+ str(cuisine) +"""\"\r
-                    ]\r
-                }\r
-            ],\r
-            \"boundingBox\": {\r
-                \"northEastCorner\": {\r
-                    \"latitude\": """+ str(bbox["lat_max"]) +""",\r
-                    \"longitude\": """+ str(bbox["lon_max"]) +"""\r
-                },\r
-                \"southWestCorner\": {\r
-                    \"latitude\": """+ str(bbox["lat_min"]) +""",\r
-                    \"longitude\": """+ str(bbox["lon_min"]) +"""\r
-                }\r
-            },\r
-            \"updateToken\": \"\"\r
-        }"""
+        payload = self.write_payload(partySize, sort, meal_type, price, min_rating, cuisine, dish, bbox)
 
         headers = {
             'content-type': "application/json",
@@ -143,8 +93,8 @@ class RestaurantAPI:
         except:
             return 4
     
-    def _find_cuisine(self, food):
-        cuisine = {"Vietnamese": 10675, "Sushi": 10653, "Asian": 10659, "Cafe": 10642, "Seafood": 10643, 
+    def _find_cuisine(self, slot_food):
+        cuisine = { "Vietnamese": 10675, "Sushi": 10653, "Asian": 10659, "Cafe": 10642, "Seafood": 10643, 
                     "European": 10654, "Bar": 10640, "International": 10648, "Italian": 4617, "Pizza": 10641, 
                     "Fast Food": 10646, "Pub": 10670, "French": 5086, "Steakhouse": 10345, "Healthy": 10679, 
                     "Barbecue": 10651, "Deli": 10666, "Russian": 10693, "American": 9908, "Eastern European": 10742, 
@@ -154,15 +104,100 @@ class RestaurantAPI:
                     "Indian": 10346, "Brew Pub": 10621, "Swiss": 10628, "Mediterranean": 10649, "Korean": 10661, 
                     "Gastropub": 10683, "Street Food": 10686, "Central European": 10746, "NorthWestern Chinese": 10780, 
                     "Arabic": 11744, "Fruit parlours": 21343, "Contemporary": 10669, "Singaporean": 10714, 
-                    "Salvadoran": 10722, "South American": 10749, "Hong Kong": 10755, "Israeli": 10769
+                    "Salvadoran": 10722, "South American": 10749, "Hong Kong": 10755, "Israeli": 10769, "Pizzeria": 10641
                     }
+        
+        meals = {    "Beef": 20752, "Salad": 16554, "Burger": 10907, "Fish": 21324, "Juice & Smoothies": 9911, "Noodle": 10645, 
+                    "Cakes": 21275, "Pork": 21326, "Pasta": 10678, "Pho": 19953, "Pesto": 21239, "Prawns": 20699, 
+                    "Shrimp": 10937, "Curry": 20181, "Eggs Benedict": 19959, "Salmon": 20547, "Cheesecake": 10885, 
+                    "Fish & Chips": 10901, "Lobster": 10915, "Oyster": 10922, "Tapas": 10942, "Pancakes": 16555, 
+                    "Crepes": 20317, "Lamb": 21174, "Sandwiches": 10647, "Bangers And Mash": 10875, "Crab": 10893, 
+                    "Hot Pot": 10909, "Tacos": 19954, "Chili": 20029, "Fajitas": 20034, "Bolognese": 20325, "Tuna": 20552, 
+                    "Toasts": 20730, "Bruschette": 21215, "Sashimi": 21320, "Ice Cream": 9899, "Burrito": 10878, 
+                    "Chilli Chicken": 10889, "Lasagne": 10914, "Omelette": 10921, "Paella": 10924, "Poutine": 10930, 
+                    "Schnitzel": 10935, "Tortillas": 10944, "Fish Taco": 16553, "Wings": 19955, "Poke Bowls": 19957, 
+                    "Waffles": 20045, "Club Sandwich": 20163, "Kabobs": 20185, "Risotto": 20312, "Meatballs": 20318, 
+                    "Tagliatelle": 20319, "Carbonara": 20320, "Chicken Parmesan": 20339, "Seafood Paella": 20476, 
+                    "Eggplant": 20483, "Hummus": 20532, "Clams": 20556, "French Fries": 20703, "Gazpacho": 20704, 
+                    "Hamburgers": 20754, "Duck": 21022, "Raclette": 21055, "Fried rice": 21285, "Cheese fondue": 21293, 
+                    "Dim Sum": 10896, "Dumplings": 10898, "Mandarin Duck": 10917, "Peking Duck": 10925, "Ramen": 11722, 
+                    "Chili Crab": 20114, "Scallops": 20542
+                }
 
-        if food is not None:
+        food, dish = None, None
+        if slot_food is not None:
             for key, value in cuisine.items():
-                if food.lower()==key.lower():
-                    return value
-        return None
+                if slot_food.lower()==key.lower():
+                    food = value
+            for key, value in meals.items():
+                if slot_food.lower()==key.lower():
+                    dish = value
+        return food, dish
 
+    def write_payload(self, partySize, sort, meal_type, price, min_rating, cuisine, dish, bbox):
+        payload = """{\r
+            \"geoId\": 1,\r
+            \"partySize\": """+ str(partySize) +""",\r
+            \"reservationTime\": \"2021-07-07T20:00\",\r
+            \"sort\": \""""+ str(sort) +"""\",\r
+            \"sortOrder\": \"desc\",\r
+            \"filters\": [\r
+                {\r
+                    \"id\": \"establishment\",\r
+                    \"value\": [\r
+                        \"10591\"\r
+                    ]\r
+                },\r
+                {\r
+                    \"id\": \"meal\",\r
+                    \"value\": [\r
+                        \""""+ str(meal_type) +"""\"\r
+                    ]\r
+                },\r
+                {\r
+                    \"id\": \"price\",\r
+                    \"value\": [\r
+                        \""""+ str(price) +"""\"\r
+                    ]\r
+                },\r
+                {\r
+                    \"id\": \"minRating\",\r
+                    \"value\": [\r
+                        \""""+ str(min_rating) +"""\"\r
+                    ]\r
+                }CUISINEDISH
+            ],\r
+            \"boundingBox\": {\r
+                \"northEastCorner\": {\r
+                    \"latitude\": """+ str(bbox["lat_max"]) +""",\r
+                    \"longitude\": """+ str(bbox["lon_max"]) +"""\r
+                },\r
+                \"southWestCorner\": {\r
+                    \"latitude\": """+ str(bbox["lat_min"]) +""",\r
+                    \"longitude\": """+ str(bbox["lon_min"]) +"""\r
+                }\r
+            },\r
+            \"updateToken\": \"\"\r
+        }"""
+
+        food = """,\r
+                {\r
+                    \"id\": \"cuisine\",\r
+                    \"value\": [\r
+                        \""""+ (str(cuisine) if cuisine is not None else "") +"""\"\r
+                    ]\r
+                }"""
+        meal = """,\r
+                {\r
+                    \"id\": \"dish\",\r
+                    \"value\": [\r
+                        \""""+ (str(dish) if dish is not None else "") +"""\"\r
+                    ]\r
+                }\r"""
+
+        payload = payload.replace("CUISINE", food) if cuisine is not None else payload.replace("CUISINE", "")
+        payload = payload.replace("DISH", meal) if dish is not None else payload.replace("DISH", "")
+        return payload
 
 class ActionSearchRestaurants(Action):
     def name(self):
@@ -240,24 +275,26 @@ class ActionInformation(Action):
 
             response = requests.request("GET", url, headers=headers, params=querystring)
             data = json.loads(response.text)
+            name = data["name"]
             location = data["location_string"] if "location_string" in data else None
             ranking = data["ranking"] if "ranking" in data else None
             #rating = data["rating"] if "rating" in data else None
             address = data["address_obj"]["street1"] if "address_obj" in data else None
             number = data["phone"] if "phone" in data else None
 
+            # Puoi aggiungere "opening hour" 
             msg = ""
-            if info is None:
-                msg += "The phone number is " + number + ". The restaurant is located in " + address + "."
-            else:
-                msg += "The phone number is " + number + "." if "number" in info or "phone" in info or "details" in info or "information" in info else ""
-                msg += " The restaurant is located in " + address + (", in " + location if location else "") if "address" in info or "direction" in info or "location" in info or "information" in info or "details" in info else ""
-
+            if info is not None:
+                msg += "The name is " + name + ". " if "name" in info else ""
+                msg += "The phone number is " + number + ". " if "number" in info or "phone" in info or "details" in info or "information" in info else ""
+                msg += "The restaurant is located in " + address + (", in " + location if location else "") if "address" in info or "direction" in info or "location" in info or "information" in info or "details" in info or "place" in info or "where" in info or "located" in info else ""
+            msg = "The phone number is " + number + ". The restaurant is located in " + address + ". " if msg=="" else msg
             dispatcher.utter_message(text=msg)
 
         return []
 
 
+# QUESTA ACTION NON E' PIU' UTILIZZATA
 class ActionGreet(Action):
     def name(self):
         return "action_greet"
@@ -279,7 +316,6 @@ class ActionGreet(Action):
         dispatcher.utter_message(text= "Choose your gender:" , buttons=buttons)
 
         return []
-        #return [FollowupAction(name = 'action_listen'), FollowupAction(name = 'action_greet_1')]
 
 
 class ActionProfile(Action):
@@ -288,12 +324,12 @@ class ActionProfile(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker, domain):
         GREET_UTT = {
-            "Hey dude what is up":                              ["male", "young"],
-            "Hey girl how is it going":                         ["female", "young"],
-            "Hello sir what can i help you with":               ["male", "middle-aged"],
-            "Hello maam how can i help you":                    ["female", "middle-aged"],
-            "Greetings sir what may i assist you with today":   ["male", "eldery"],
-            "Good day madam how could i assist you today":      ["female", "eldery"]
+            "Hey dude, how can I help?":                        ["male", "young"],
+            "Hey girl how can I help?":                         ["female", "young"],
+            "Hello sir what can I help you with":               ["male", "middle-aged"],
+            "Hello maam how can I help you":                    ["female", "middle-aged"],
+            "Greetings sir what may I assist you with today":   ["male", "eldery"],
+            "Good day madam how could I assist you today":      ["female", "eldery"]
         }
 
         gender = tracker.get_slot("gender")
