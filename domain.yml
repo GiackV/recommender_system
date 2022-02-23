@@ -19,6 +19,10 @@ intents:
     use_entities: true
 - choose:
     use_entities: true
+- what_can_do:
+    use_entities: false
+- mood_greet:
+    use_entities: false
 entities:
 - info
 - profile
