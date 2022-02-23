@@ -1,0 +1,503 @@
+version: "2.0"
+stories:
+- story: Story from Conversation ID 717c45fdb924401382590fa22f402c36
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - intent: choose
+  - action: init_form
+  - intent: choose
+  - action: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 4
+  - intent: inform
+    entities:
+    - place: Milano
+  - slot_was_set:
+    - place: Milano
+  - action: utter_processing_4
+  - action: utter_ask_food_4
+  - intent: inform
+    entities:
+    - food: chinese
+  - slot_was_set:
+    - food: chinese
+  - action: utter_ask_people_4
+  - intent: inform
+    entities:
+    - people: '3'
+  - slot_was_set:
+    - people: '3'
+  - action: utter_ask_price_4
+  - intent: inform
+    entities:
+    - price: cheap
+  - slot_was_set:
+    - price: cheap
+  - action: utter_search_options_4
+  - action: utter_provide_option_4
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: info
+  - action: utter_provide_info_4
+  - action: action_provide_informations
+  - intent: deny
+  - action: utter_other_option_4
+  - action: action_suggest_restaurant
+  - intent: info
+  - action: utter_provide_info_4
+  - action: action_provide_informations
+  - intent: affirm
+  - action: utter_reservation_4
+  - intent: thankyou
+  - action: utter_sth_else_4
+  - intent: deny
+  - action: utter_welcome_4
+- story: Story from Conversation ID 7dc27e3a4c1e434490a368f66190e539
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 4
+  - intent: inform
+    entities:
+    - place: Milano
+  - slot_was_set:
+    - place: Milano
+  - action: utter_processing_4
+  - action: utter_ask_food_4
+  - intent: inform
+    entities:
+    - food: chinese
+  - slot_was_set:
+    - food: chinese
+  - action: utter_ask_people_4
+  - intent: inform
+    entities:
+    - people: '3'
+  - slot_was_set:
+    - people: '3'
+  - action: utter_ask_price_4
+  - intent: inform
+    entities:
+    - price: cheap
+  - slot_was_set:
+    - price: cheap
+  - action: utter_search_options_4
+  - action: utter_provide_option_4
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: info
+  - action: utter_provide_info_4
+  - action: action_provide_informations
+  - intent: info
+  - action: utter_provide_info_4
+  - action: action_provide_informations
+- story: Story from Conversation ID cb7670c4abaa48558be538c60fae103e
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 3
+  - intent: inform
+  - action: utter_ask_food_3
+  - intent: inform
+    entities:
+    - food: Sushi
+  - slot_was_set:
+    - food: Sushi
+  - action: utter_ask_location_3
+  - intent: inform
+    entities:
+    - place: Naples
+  - slot_was_set:
+    - place: Naples
+  - action: utter_ask_people_3
+  - intent: inform
+    entities:
+    - people: '7'
+  - slot_was_set:
+    - people: '7'
+  - action: utter_ask_price_3
+  - intent: deny
+    entities:
+    - price: cheap
+  - action: utter_search_options_3
+  - action: utter_provide_option_3
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: affirm
+- story: Story from Conversation ID 2344f5fb1af04f46890e38c15827a314
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 2
+  - intent: inform
+    entities:
+    - place: Salerno
+  - slot_was_set:
+    - place: Salerno
+  - action: utter_ask_people_2
+  - intent: inform
+    entities:
+    - people: '8'
+  - slot_was_set:
+    - people: '8'
+  - action: utter_ask_price_2
+  - intent: nlu_fallback
+    entities:
+    - price: moderate
+  - action: utter_search_options_2
+  - action: utter_provide_option_2
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: deny
+  - action: utter_other_option_2
+  - action: utter_provide_option_2
+  - action: action_suggest_restaurant
+  - intent: deny
+  - action: utter_other_option_2
+  - action: utter_provide_option_2
+  - action: action_suggest_restaurant
+  - intent: affirm
+  - action: utter_reservation_2
+  - intent: info
+  - action: utter_provide_info_2
+  - action: action_provide_informations
+  - intent: info
+  - action: utter_provide_info_2
+  - action: action_provide_informations
+  - intent: info
+  - action: utter_provide_info_2
+  - action: action_provide_informations
+  - intent: affirm
+  - action: utter_reservation_2
+  - intent: thankyou
+  - action: utter_sth_else_2
+  - intent: deny
+  - action: utter_other_option_2
+  - action: utter_provide_option_2
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+- story: Story from Conversation ID 9a6b91343b1e45298f18863d298b2151
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 1
+  - intent: inform
+    entities:
+    - place: amore
+  - slot_was_set:
+    - place: amore
+  - action: utter_processing_1
+  - action: utter_ask_food_1
+  - intent: inform
+    entities:
+    - food: Chinese
+  - slot_was_set:
+    - food: Chinese
+  - action: utter_ask_people_1
+  - intent: affirm
+    entities:
+    - people: '7'
+  - action: utter_reservation_1
+  - intent: info
+  - action: utter_provide_info_1
+  - action: action_provide_informations
+  - intent: info
+  - action: utter_provide_info_1
+  - action: action_provide_informations
+- story: Story from Conversation ID dc4b0ebced8a4bdbbdcb348dfb8167f0
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 3
+  - intent: inform
+  - action: utter_ask_food_3
+  - intent: inform
+    entities:
+    - food: Sushi
+  - slot_was_set:
+    - food: Sushi
+  - action: utter_ask_location_3
+  - intent: inform
+    entities:
+    - place: Naples
+  - slot_was_set:
+    - place: Naples
+  - action: utter_ask_people_3
+  - intent: inform
+    entities:
+    - people: '7'
+  - slot_was_set:
+    - people: '7'
+  - action: utter_ask_price_3
+  - intent: deny
+    entities:
+    - price: cheap
+  - action: utter_search_options_3
+  - action: utter_provide_option_3
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: affirm
+  - action: utter_reservation_3
+- story: Story from Conversation ID a9bcbfaba9244c4a973ca422a2d5340f
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 5
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 5
+  - intent: inform
+  - action: utter_ask_food_5
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 5
+  - intent: inform
+    entities:
+    - place: Lancusi
+    - food: italian
+  - slot_was_set:
+    - food: italian
+  - slot_was_set:
+    - place: Lancusi
+  - action: utter_ask_people_5
+  - intent: inform
+    entities:
+    - people: '6'
+  - slot_was_set:
+    - people: '6'
+  - action: utter_ask_price_5
+  - intent: inform
+    entities:
+    - price: cheap
+  - slot_was_set:
+    - price: cheap
+  - action: utter_search_options_5
+  - action: utter_provide_option_5
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: info
+  - action: utter_provide_info_5
+  - action: action_provide_informations
+  - intent: deny
+  - action: utter_other_option_5
+  - action: utter_provide_option_5
+  - action: action_suggest_restaurant
+- story: Story from Conversation ID e7430bd9238545c38cb50af6674d2ce3
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 4
+  - intent: thankyou
+  - action: utter_sth_else_4
+  - intent: inform
+  - action: utter_ask_food_4
+  - intent: inform
+    entities:
+    - food: italian
+    - price: moderate
+  - slot_was_set:
+    - food: italian
+  - slot_was_set:
+    - price: moderate
+  - action: utter_ask_location_4
+  - intent: inform
+    entities:
+    - place: Avellino
+  - slot_was_set:
+    - place: Avellino
+  - action: utter_ask_people_4
+  - intent: inform
+    entities:
+    - people: '3'
+  - slot_was_set:
+    - people: '3'
+  - action: utter_processing_4
+  - action: utter_provide_option_4
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+- story: Story from Conversation ID 9cd1d1b8b97e4cbb896cd76c50773084
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 2
+  - intent: mood_great
+  - action: utter_sth_else_2
+  - intent: inform
+  - action: utter_ask_food_2
+- story: Story from Conversation ID c72cf4228a00468cafb4bde3c0f46876
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 6
+  - intent: inform
+  - action: utter_sth_else_6
+  - intent: inform
+    entities:
+    - food: pizza
+  - slot_was_set:
+    - food: pizza
+  - action: utter_ask_location_6
+  - intent: inform
+    entities:
+    - place: palermo
+  - slot_was_set:
+    - place: palermo
+  - action: utter_ask_people_6
+  - intent: inform
+    entities:
+    - people: '6'
+  - slot_was_set:
+    - people: '6'
+  - action: utter_ask_price_6
+  - intent: nlu_fallback
+    entities:
+    - price: moderate
+  - action: utter_search_options_6
+  - action: utter_provide_option_6
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: info
+  - action: utter_provide_info_6
+  - action: action_provide_informations
+  - intent: deny
+  - action: utter_provide_info_6
+  - action: action_provide_informations
+  - intent: info
+  - action: utter_provide_info_6
+  - action: action_provide_informations
+  - intent: info
+  - action: utter_provide_info_6
+  - action: action_provide_informations
+  - intent: deny
+  - action: utter_provide_option_6
+- story: Story from Conversation ID 3a201dba37e74e7285ad5bc9bb573c2e
+  steps:
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 2
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 2
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 2
+  - intent: greet
+  - action: init_form
+  - active_loop: init_form
+  - active_loop: null
+  - action: action_profile
+  - slot_was_set:
+    - profile: 2
+  - intent: inform
+    entities:
+    - food: pizza
+  - slot_was_set:
+    - food: pizza
+  - action: utter_processing_2
+  - action: utter_ask_location_2
+  - intent: inform
+    entities:
+    - place: torino
+  - slot_was_set:
+    - place: torino
+  - action: utter_ask_people_2
+  - intent: inform
+    entities:
+    - people: '5'
+  - slot_was_set:
+    - people: '5'
+  - action: utter_ask_price_2
+  - intent: nlu_fallback
+    entities:
+    - price: moderate
+  - action: utter_search_options_2
+  - action: utter_provide_option_2
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
+  - intent: deny
+  - action: utter_other_option_2
+  - action: utter_provide_option_2
+  - action: action_suggest_restaurant
+  - intent: deny
+  - action: utter_other_option_2
+  - action: utter_provide_option_2
+  - action: action_suggest_restaurant
+  - intent: inform
+    entities:
+    - price: expensive
+  - slot_was_set:
+    - price: expensive
+  - action: utter_ask_update_2
+  - intent: affirm
+  - action: utter_ask_update_2
+  - intent: inform
+    entities:
+    - food: beer
+  - slot_was_set:
+    - food: beer
+  - action: utter_ask_update_2
+  - intent: deny
+  - action: utter_search_options_2
+  - action: utter_provide_option_2
+  - action: action_search_restaurants
+  - action: action_suggest_restaurant
