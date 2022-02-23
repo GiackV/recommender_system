@@ -134,9 +134,9 @@ nlu:
     - Actually i would like some [mexican](food) food
     - is there a good restaurant in [Parigi](place)
     - I want a restaurant in [paris](place) with some [french](food) food
-    - i want [pizza](food)
     - [six]{"entity": "people", "value": "6"}
     - [napoli](place)
+    - i want [pizza](food)
     - we are looking for a [pizzeria](food)
 - intent: info
   examples: |
