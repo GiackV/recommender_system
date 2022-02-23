@@ -133,6 +133,11 @@ nlu:
     - i think there will be at least [five]{"entity": "people", "value": "5"} people
     - Actually i would like some [mexican](food) food
     - is there a good restaurant in [Parigi](place)
+    - I want a restaurant in [paris](place) with some [french](food) food
+    - i want [pizza](food)
+    - [six]{"entity": "people", "value": "6"}
+    - [napoli](place)
+    - we are looking for a [pizzeria](food)
 - intent: info
   examples: |
     - Which is the [name](info) of the restaurant?
@@ -152,6 +157,7 @@ nlu:
     - tell me the [phone number](info)
     - tell me the [info](info)
     - [where](info) is it [located](info)?
+    - tell me the [location](info)
 - intent: thankyou
   examples: |
     - Thank you
@@ -174,6 +180,7 @@ nlu:
     - no give me another restaurant please
     - i dont like it
     - nope
+    - no, it's too far from me
 - intent: affirm
   examples: |
     - Yes
