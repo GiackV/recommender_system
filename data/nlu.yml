@@ -226,6 +226,14 @@ nlu:
     - We are [2](people)
     - I am searching for a [Ristopub](food)
     - I amore looking to eat some [meat](food)
+    - Near [Rome](place)
+    - [Pasta](food)
+    - I want to eat
+    - [Fish](food) plates
+    - [three]{"entity": "people", "value": "3"} of us
+    - [london](place)
+    - [pasta](food)
+    - help me finding a restaurant
 - intent: info
   examples: |
     - Which is the [name](info) of the restaurant?
@@ -294,6 +302,9 @@ nlu:
     - Nothing
     - No I don't like [sushi](food)
     - No thanks
+    - give me more options
+    - i don't like it
+    - give me another restaurant
 - intent: affirm
   examples: |
     - Yes
@@ -314,6 +325,7 @@ nlu:
     - perfect
     - Perfect
     - Yes, it's cool
+    - this one seems cool
 - intent: mood_greet
   examples: |
     - It's going well
