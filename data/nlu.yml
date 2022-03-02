@@ -234,6 +234,23 @@ nlu:
     - [london](place)
     - [pasta](food)
     - help me finding a restaurant
+    - [Spaghetti](food)
+    - I want to eat [pizza](food)
+    - Eat
+    - [Battipaglia](place)
+    - I want [sushi](food)
+    - I like [italian](food) cuisine
+    - I Need a car
+    - Hello i Need a restaurant
+    - I Need a [sushi](food) restaurant for [two]{"entity": "people", "value": "2"} in [Tallinn](place)
+    - [Tallin](place)
+    - I want a lot of [sushi](food)
+    - i want [Italian](food) food
+    - I want to try [Chinese](food) food
+    - [pizza](food) please
+    - i want a [pizzeria](food) in [Salerno](place)
+    - A [dozens](people)
+    - find me a vintage store
 - intent: info
   examples: |
     - Which is the [name](info) of the restaurant?
@@ -268,6 +285,7 @@ nlu:
     - Please provide me the [phone number](info)
     - Give me [maps link](info)
     - Which is the [phone number](info)?
+    - tell me its [number](info)?
 - intent: thankyou
   examples: |
     - Thank you
@@ -278,6 +296,7 @@ nlu:
     - Ok thank you
     - I like this one, thank you very much
     - Thanks
+    - Thank you, you are the best bot I ever used.
 - intent: deny
   examples: |
     - [cheap](price)
@@ -326,6 +345,7 @@ nlu:
     - Perfect
     - Yes, it's cool
     - this one seems cool
+    - grat
 - intent: mood_greet
   examples: |
     - It's going well
@@ -341,6 +361,12 @@ nlu:
     - no, goodbye!
     - goodbye
     - No bye bye
+- intent: nlu_fallback
+  examples: |
+    - ls
+    - Don't call me dude, I'm not your friend
+    - Ao
+    - AO
 - synonym: '6'
   examples: |
     - six
@@ -350,14 +376,14 @@ nlu:
 - synonym: '5'
   examples: |
     - five
+- synonym: '3'
+  examples: |
+    - three
 - synonym: '1'
   examples: |
     - one
     - alone
     - One
-- synonym: '3'
-  examples: |
-    - three
 - synonym: '4'
   examples: |
     - four
