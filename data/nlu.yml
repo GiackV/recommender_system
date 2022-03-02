@@ -251,6 +251,9 @@ nlu:
     - i want a [pizzeria](food) in [Salerno](place)
     - A [dozens](people)
     - find me a vintage store
+    - Naples'having [1=1](people) --
+    - Chinesw
+    - 150 max
 - intent: info
   examples: |
     - Which is the [name](info) of the restaurant?
@@ -297,6 +300,7 @@ nlu:
     - I like this one, thank you very much
     - Thanks
     - Thank you, you are the best bot I ever used.
+    - Very good thanks
 - intent: deny
   examples: |
     - [cheap](price)
@@ -324,6 +328,8 @@ nlu:
     - give me more options
     - i don't like it
     - give me another restaurant
+    - This is not in [Fisciano](place)
+    - you did wrong
 - intent: affirm
   examples: |
     - Yes
@@ -346,15 +352,21 @@ nlu:
     - Yes, it's cool
     - this one seems cool
     - grat
-- intent: mood_greet
+    - let me know
+- intent: ask_status
   examples: |
     - It's going well
     - Nothing new, how about you?
     - Ok you?
-    - Very good thanks
-- intent: what_can_you_do
+    - Very good thanks, what about you?
+    - how are you?
+    - how are you
+- intent: ask_functionalities
   examples: |
     - what can you do
+    - tell me what you can do
+    - Tell me
+    - what can you do?
 - intent: goodbye
   examples: |
     - Good bye
@@ -367,6 +379,30 @@ nlu:
     - Don't call me dude, I'm not your friend
     - Ao
     - AO
+    - __&_&
+    - $#$#
+    - °°°
+    - °°°°
+    - +[±+++++++++±](place)
+    - ;-&__-:&
+- intent: ask_specific_restaurant
+  examples: |
+    - how about a mcdonald?
+    - Okay, where are the [KFC](food) restaurants in [Naples](place)?
+    - No what about [Pigreco](place)?
+    - How is the restaurant  On the run?
+    - Sorbillo
+    - sorbillo
+- intent: chitchat
+  examples: |
+    - Scommetto che hai studiato a Fisciano maledetto
+    - Madonna di dio perché non funziona
+    - Genna' ti voglio troppo bene mi manchi ♥️
+    - What kind of answer is it?!
+    - eh [ghesboro](place) [ohi](place)
+    - Dai cazzo però
+    - I don’t wanna eat
+    - Vorrei del cibo che che mi [sazi](place) ma che [non](food) mi [gonfi](place)
 - synonym: '6'
   examples: |
     - six
